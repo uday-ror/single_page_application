@@ -1,0 +1,13 @@
+<li id="comment-<%= comment.id %>">
+ 
+  <strong>Commenter:</strong>
+  <%= comment.commenter %><br>
+ 
+  <strong>Comment:</strong>
+  <%= comment.body %><br>
+
+  <%= link_to "Destroy", article_comment_path(comment),
+                  method: :delete,remote: true,
+                  data: { confirm: "Are you sure?" } %>
+
+    </li>

@@ -1,0 +1,9 @@
+<%  if @article.save %>
+ 	$("#list").append("<%= j render partial: 'article', :locals => {:article => @article} %>");
+ 	$(".popuptext").html("");
+ 	$("#model1").hide();
+
+<% else %>     
+	$(".popuptext").html("<%= j render partial: 'form' %>");
+
+<% end %>

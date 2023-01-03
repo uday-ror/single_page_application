@@ -1,0 +1,43 @@
+<%= render "index" %>
+<div class="model" id="model1">
+  <div class="popup" >
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>hello</h2>
+    </div>
+    <div class="modal-body">
+    <span class="popuptext" id="myPopup"></span>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+      $(document).on('click','button',function(){
+        jQuery.ajax({
+        url:  "/articles/" + jQuery(this).attr("a_id"),
+        type: "GET",
+        dataType: "script"
+      });
+    });
+  });
+
+  var modal = document.getElementById("model1");
+  var span = document.getElementsByClassName("close")[0];
+  span.onclick = function(){
+    modal.style.display = "none";
+  }
+  window.onclick = function(event){
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+
+
+</script>

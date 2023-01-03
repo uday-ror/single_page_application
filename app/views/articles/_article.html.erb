@@ -1,0 +1,8 @@
+<li id="article-<%= article.id %>">
+     <button a_id= "<%= article.id %>"> <%= article.title %>
+    </button>
+    <button><%= link_to "Edit", edit_article_path(article), remote: true %></button>
+    <%= link_to "Destroy", article, method: :delete,
+                  data: { confirm: "Are you sure?" },
+                  :remote => true  %>
+    </li>
